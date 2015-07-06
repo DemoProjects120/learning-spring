@@ -16,6 +16,8 @@ repositories {
 dependencies {
 
     compile 'org.springframework:spring-context:4.1.7.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.1.7.RELEASE'
+    compile 'mysql:mysql-connector-java:5.1.36'
     compile 'org.aspectj:aspectjweaver:1.8.6'
     compile 'org.aspectj:aspectjrt:1.8.6'
 

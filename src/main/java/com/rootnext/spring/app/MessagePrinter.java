@@ -1,5 +1,6 @@
 package com.rootnext.spring.app;
 
+import com.rootnext.spring.app.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

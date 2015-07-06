@@ -1,4 +1,4 @@
-package com.rootnext.spring.app;
+package com.rootnext.spring.app.services;
 
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageService {
 
-    String getMessage(){
+    public String getMessage(){
         return "Hello World !!!??!!!";
     };
 }
