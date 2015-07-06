@@ -41,4 +41,8 @@ public class Employee {
     public void setSalary(Float salary) {
         this.salary = salary;
     }
+
+    public String toString(){
+        return "[" + id + ", '"+name+"', "+salary+"]" ;
+    }
 }

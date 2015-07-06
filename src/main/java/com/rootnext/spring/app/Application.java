@@ -1,6 +1,5 @@
 package com.rootnext.spring.app;
 
-import com.rootnext.spring.app.models.Employee;
 import com.rootnext.spring.app.models.EmployeeDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
@@ -42,8 +41,8 @@ public class Application {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Application.class);
 
         EmployeeDao employeeDao = applicationContext.getBean(EmployeeDao.class);
-        int status = employeeDao.saveEmployee(new Employee(1l, "Sanjoy Kumar Mitra", 6000.00f));
-        System.out.println(status);
+        System.out.println(employeeDao.getAllEmployees());
+        System.out.println(employeeDao.employeeList());
 
     }
 }
