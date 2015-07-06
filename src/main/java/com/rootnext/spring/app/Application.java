@@ -10,7 +10,7 @@ public class Application {
 
     public static void main(String[] args){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContex.xml");
-        MessagePrinter messagePrinter = (MessagePrinter)applicationContext.getBean("messagePrinter");
+        MessagePrinter messagePrinter = applicationContext.getBean("proxy", MessagePrinter.class);
         messagePrinter.printMessage();
     }
 }

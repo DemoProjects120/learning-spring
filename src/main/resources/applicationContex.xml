@@ -9,4 +9,14 @@
         <constructor-arg ref="messageService"></constructor-arg>
     </bean>
 
+    <bean id="beforeAdvisor" class="com.rootnext.spring.app.advisors.BeforeAdvisor"></bean>
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="messagePrinter"></property>
+        <property name="interceptorNames">
+            <list>
+                <value>beforeAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
 </beans>
