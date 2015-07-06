@@ -1,0 +1,12 @@
+.idea/
+.gradle/
+
+out/
+build/
+
+
+*.iml
+
+
+src/main/webapp/resources/bower_components
+
