@@ -1,11 +1,18 @@
 package com.rootnext.spring.app.models;
 
+import javax.persistence.*;
+
 /**
  * Created by sanjoy on 7/6/15.
  */
+@Entity
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column
     private String name;
+    @Column
     private Float salary;
 
     public Employee(){

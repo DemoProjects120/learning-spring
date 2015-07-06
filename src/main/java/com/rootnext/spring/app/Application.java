@@ -1,6 +1,6 @@
 package com.rootnext.spring.app;
 
-import com.rootnext.spring.app.models.EmployeeDao;
+import com.rootnext.spring.app.models.EmployeeRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,8 +14,9 @@ import javax.sql.DataSource;
 @EnableAspectJAutoProxy
 @Configuration
 @ComponentScan
-
 public class Application {
+
+
 
     @Bean(name = "dataSource")
     public DataSource getDataSource(){
@@ -30,19 +31,12 @@ public class Application {
     public JdbcTemplate getJdbcTemplate(){
         return new JdbcTemplate(getDataSource() );
     }
-//    @Bean
-//    public EmployeeDao getEmployeeDao(){
-//        EmployeeDao employeeDao = new EmployeeDao();
-//        employeeDao.setJdbcTemplate(getJdbcTemplate());
-//        return employeeDao;
-//    }
 
     public static void main(String[] args){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(Application.class);
 
-        EmployeeDao employeeDao = applicationContext.getBean(EmployeeDao.class);
-        System.out.println(employeeDao.getAllEmployees());
-        System.out.println(employeeDao.employeeList());
+        EmployeeRepository employeeRepository = applicationContext.getBean(EmployeeRepository.class);
+        System.out.println(employeeRepository.findAll());
 
     }
 }
